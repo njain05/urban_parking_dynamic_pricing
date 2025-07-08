@@ -1,7 +1,10 @@
 # 🚗 Dynamic Pricing for Urban Parking Lots
 *Capstone Project for Summer Analytics 2025 – by Nishtha Jain*
 ---
-
+![Python](https://img.shields.io/badge/Python-3.10-blue.svg)
+![Bokeh](https://img.shields.io/badge/Bokeh-Interactive%20Graphs-purple)
+![Platform](https://img.shields.io/badge/Platform-Google%20Colab-yellow)
+![License](https://img.shields.io/badge/License-MIT-green)
 ## 📌 Project Overview
 
 Urban parking spaces are scarce and often inefficiently priced. Fixed pricing leads to congestion during peak times and underutilization during off-peak hours. This project builds a **real-time dynamic pricing engine** using data from 14 parking lots over 73 days.
@@ -23,10 +26,9 @@ We implement **three increasingly intelligent pricing models** inside a single n
 ## 🧠 Pricing Models (All implemented in `final_colab.ipynb`)
 
 ### ✅ Model 1: Baseline Linear Model
-Adjusts price linearly based on occupancy.
-\[
-\text{Price}_{t+1} = \text{Price}_t + \alpha \cdot \left(\frac{\text{Occupancy}}{\text{Capacity}}\right)
-\]
+Adjusts price linearly based on occupancy:  
+$\text{Price}_{t+1} = \text{Price}_t + \alpha \cdot \left(\frac{\text{Occupancy}}{\text{Capacity}}\right)$
+
 
 ### ✅ Model 2: Demand-Based Model
 Uses a custom **demand function** combining:
@@ -48,7 +50,7 @@ Adds spatial intelligence using location (lat/long) and competitor pricing:
 
 ## 🛠️ Architecture
 
-![System Diagram](images/architecture.png)
+![System Diagram](architecture.png)
 
 ---
 
@@ -64,9 +66,9 @@ Built using **Bokeh** in real time:
 ## 🚀 How to Run
 
 1. **Open the notebook**:  
-   [`final_colab.ipynb`](notebook/final_colab.ipynb)
+   [`final_colab.ipynb`](final_colab.ipynb)
 
-2. **Upload the dataset** to `/data/dataset.csv`
+2. **Upload the dataset** to `dataset.csv`
 
 3. **Run all cells** step by step:
    - Data loading and streaming
@@ -84,7 +86,16 @@ Built using **Bokeh** in real time:
 ---
 
 ## 📄 Report (Optional)
-If attached, the report is available at: [`report.pdf`](report.pdf)
+If attached, the report is available at: [`report.md`](report.md)
+
+---
+## 🔍 Model Comparison Snapshot
+
+| Model                | Features Used                                       | Smartness Level | Adaptivity |
+|---------------------|-----------------------------------------------------|------------------|------------|
+| Baseline Linear     | Occupancy                                           | ⭐               | 🔁 Medium   |
+| Demand-Based        | Occupancy + Queue + Traffic + Special Day + Type   | ⭐⭐⭐            | 🔁 High    |
+| Competitive Pricing | Demand Factors + Nearby Prices (Spatial Awareness) | ⭐⭐⭐⭐           | 🔁 Very High |
 
 ---
 
