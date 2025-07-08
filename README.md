@@ -85,7 +85,7 @@ Built using **Bokeh** in real time:
 
 ---
 
-## 📄 Report (Optional)
+## 📄 Report 
 If attached, the report is available at: [`report.md`](report.md)
 
 ---
